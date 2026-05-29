@@ -1,67 +1,44 @@
-# ScottsTechX-nikto
+# 🔍 ScottsTechX Nikto
 
-🔐 Pentesting Tool | Part of ScottsTechX Tool Suite
+<p align="center">
+  <img src="https://img.shields.io/badge/Nikto-Web-Scanner-00ff88?style=for-the-badge&logo=linux&logoColor=black" alt="Nikto"/>
+  <img src="https://img.shields.io/badge/Web-Security-00ff88?style=for-the-badge&logo=shield&logoColor=black" alt="Web Security"/>
+</p>
 
----
-
-## About
-
-**Web server scanner - find vulnerabilities, misconfigs, outdated software**
-
-Official ScottsTechX tool repo — part of the [ScottsTechX Tool Installer](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer) suite.
-
-**Official Website:** https://nikto.sourceforge.net/
+> **Web server vulnerability scanner — find misconfigs, outdated software, and known CVEs.**
 
 ---
 
-## Quick Install
+## ⚡ What It Does
 
-### Via ScottsTechX Tool Installer:
+Nikto scans web servers for 7000+ known vulnerabilities, misconfigurations, dangerous files, and outdated software versions. Essential for initial web reconnaissance.
+
+## 🚀 Quick Usage
 
 ```bash
-scotts-techx install nikto
+# Basic scan
+nikto -h target.com
+
+# Full scan with tuning
+nikto -h target.com -T 1-6
+
+# Scan specific ports
+nikto -h target.com -p 80,443,8080
+
+# Save output
+nikto -h target.com -o results.xml -Format xml
+
+# Evade detection (slow)
+nikto -h target.com -evasion +Tuning 1
 ```
 
-### Manual Install:
+## 🛡 Bug Bounty
 
 ```bash
-# Linux/macOS/Git Bash
-curl -fsSL https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-nikto/main/install.sh | bash
-
-# Windows PowerShell
-irm https://raw.githubusercontent.com/fredscottsbulls/ScottsTechX-nikto/main/install.ps1 | iex
+nikto -h https://target.com -ssl -timeout 30
+nikto -h target.com -plugins "+@ALL" -maxtime 2h
 ```
 
 ---
 
-## What is NIKTO?
-
-Web server scanner - find vulnerabilities, misconfigs, outdated software.
-
-For full documentation: https://nikto.sourceforge.net/
-
----
-
-## ScottsTechX Tool Suite (30 tools)
-
-| Category | Tools |
-|----------|-------|
-| Simple CLI | nmap, curl, wget, jq, git, python3, ffmpeg, traceroute, netcat, openssh |
-| Pentesting | hydra, sqlmap, nikto, hashcat, gobuster, searchsploit, masscan, burpsuite, ncat, Responder |
-| DevOps | docker, vim, htop, tmux, tar, make, openssl, ansible, kubectl, terraform |
-
-**[View Full Suite](https://github.com/fredscottsbulls/ScottsTechX-Tool-Installer)**
-
----
-
-## Disclaimer
-
-**For authorized use only.** Unauthorized access to computer systems is illegal.
-
----
-
-<div align="center">
-
-**ScottsTechX** | Fred Scotts | https://github.com/fredscottsbulls
-
-</div>
+MIT © 2026
